@@ -12,13 +12,13 @@ export const useLocalStorage = (key, initialValue) => {
         if (window.localStorage.getItem(key)) {
             return JSON.parse(window.localStorage.getItem(key));
         }
-        window.localStorage.setItem(key, Json.stringify(initialValue));
+        window.localStorage.setItem(key, JSON.stringify(initialValue));
         return initialValue;
     });
 
     const setValue = value => {
         setStoredValue(value);
-        window.localStorage.setItem(key, Json.stringify(value));
+        window.localStorage.setItem(key, JSON.stringify(value));
     }
     return [storedValue, setValue];
 }
